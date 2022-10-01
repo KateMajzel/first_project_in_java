@@ -1,0 +1,15 @@
+package restaurant;
+
+import java.util.Objects;
+
+public class IceCream extends Dish{
+
+    public IceCream(Integer number, String name, Integer price, Integer calories) {
+        super(number, name, price, calories);
+    }
+
+    @Override
+    public String toString() {
+        return "Ice cream " + getNumber() + ". " + getName() + "  " + getPrice() + " USD" + "  " + getCalories() + " calories \n";
+    }
+}
