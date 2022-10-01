@@ -1,0 +1,15 @@
+package restaurant;
+
+import java.util.Objects;
+
+public class Drink extends Dish{
+
+    public Drink(Integer number, String name, Integer price, Integer calories) {
+        super(number, name, price, calories);
+    }
+
+    @Override
+    public String toString() {
+        return "Drink " + getNumber() + ". " + getName() + "  " + getPrice() + " USD" + "  " + getCalories() + " calories \n";
+    }
+}
