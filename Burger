@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Burger extends Dish {
+    private String cheese;
+
+public String getCheese() {
+        return cheese;
+        }
+
+public void setCheese(String cheese) {
+        this.cheese = cheese;
+        }
+
+
+public Burger(Integer number, String name, Integer price, Integer calories, String cheese){
+        super(number,name,price,calories);
+        this.cheese=cheese;
+
+        }
+
+    @Override
+    public String toString() {
+        return "Burger " +getNumber() + ". " + getName() + "  " + getPrice() +" USD" + "  " + getCalories() + " calories " + getCheese() + " cheese\n";
+    }
+
+}
