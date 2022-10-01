@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import static restaurant.MenuRestaurant.menuRestaurant;
+
+  public class MainMenu {
+
+  public static void main(String[] args) {
+    MenuRestaurant m = new MenuRestaurant();
+
+    int clientChoiceBurger = 0;
+    int clientChoiceChips = 0;
+    int clientChoiceSalad = 0;
+    int clientChoiceIceCream = 0;
+    int clientChoiceDrink = 0;
+    m.run();
+
+    System.out.println("Hello in Mac restaurant");
+    menuRestaurant();
+
+//method that supports the menu selection by the user in class MenuRestaturant
+    m.setClientMenuChoice(clientChoiceBurger, clientChoiceChips, clientChoiceSalad, clientChoiceIceCream, clientChoiceDrink);
+
+  }
+
+}
