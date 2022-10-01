@@ -1,0 +1,188 @@
+package restaurant;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+    public class Order {
+
+//array with dishes
+       List<Burger> burgerMenu = new ArrayList<>();
+       List<Chips> chipsMenu = new ArrayList<>();
+       List<Salad> saladMenu = new ArrayList<>();
+       List<IceCream> iceCreamMenu = new ArrayList<>();
+       List<Drink> drinkMenu = new ArrayList<>();
+       List<Dish> orderForAllMenu = new ArrayList<>();
+
+
+//burger board and method choice burger by user
+    public List<Burger> createBurgerMenu() {
+        Burger burgerCheeseBrightBread = new Burger(1, "Cheese with bright bread", 15, 200, "no");
+        Burger burgerCheeseDarkBread = new Burger(2, "Cheese with dark bread", 15, 180, "yes");
+        Burger burgerDoubleCheeseBrightBread = new Burger(3, "Double cheese with bright bread", 18, 250, "no");
+        Burger burgerDoubleCheeseDarkBread = new Burger(4, "Double cheese with dark bread", 18, 230, "yes");
+        burgerMenu.add(burgerCheeseBrightBread);
+        burgerMenu.add(burgerCheeseDarkBread);
+        burgerMenu.add(burgerDoubleCheeseBrightBread);
+        burgerMenu.add(burgerDoubleCheeseDarkBread);
+        return burgerMenu;
+    }
+    int clientChoiceBurger;
+    public void showBurgerMenu(List<Burger> burgerMenu) {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Choice burger, please");
+        System.out.println(burgerMenu.toString());
+        clientChoiceBurger = myScanner.nextInt();
+    }
+    public void choiceBurger (int clientChoiceBurger) {
+        System.out.println("How many burgers?");
+        Scanner myScanner = new Scanner(System.in);
+        int burgerQuantity = myScanner.nextInt();
+
+        for (int i = 0; i < burgerQuantity; i++) {
+            orderForAllMenu.add(burgerMenu.get(clientChoiceBurger-1));
+
+        }
+    }
+
+//chips board and method choice chips by user
+    public List<Chips> createChipsMenu() {
+        Chips smallFries = new Chips(1, "small fries", 8, 120);
+        Chips bigFries = new Chips(2, "big fries", 12, 150);
+        chipsMenu.add(smallFries);
+        chipsMenu.add(bigFries);
+        return chipsMenu;
+    }
+        int clientChoiceChips;
+
+        public void showChipsMenu(List<Chips> chipsMenu) {
+            Scanner myScanner = new Scanner(System.in);
+            System.out.println("Choice chips, please");
+            System.out.println(chipsMenu.toString());
+            clientChoiceChips = myScanner.nextInt();
+        }
+
+    public void choiceChips (int clientChoiceChips) {
+        System.out.println("How many chips?");
+        Scanner myScanner = new Scanner(System.in);
+        int chipsQuantity = myScanner.nextInt();
+
+        for (int i = 0; i < chipsQuantity; i++) {
+            orderForAllMenu.add(chipsMenu.get(clientChoiceChips-1));
+
+        }
+    }
+
+//salad board and method choice salad by user
+    public List<Salad> createSaladMenu() {
+        Salad smallSalad = new Salad(1, "small salad", 14, 110);
+        Salad bigsalad = new Salad(2, "big salad", 17, 150);
+        saladMenu.add(smallSalad);
+        saladMenu.add(bigsalad);
+        return saladMenu;
+    }
+
+    int clientChoiceSalad;
+
+    public void showSaladMenu(List<Salad> saladMenu) {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Choice salad, please");
+        System.out.println(saladMenu.toString());
+        clientChoiceSalad = myScanner.nextInt();
+    }
+
+        public void choiceSalad (int clientChoiceSalad) {
+            System.out.println("How many salad?");
+            Scanner myScanner = new Scanner(System.in);
+            int saladQuantity = myScanner.nextInt();
+
+            for (int i = 0; i < saladQuantity; i++) {
+                orderForAllMenu.add(saladMenu.get(clientChoiceSalad-1));
+            }
+        }
+
+//ice cream board and method choice ice cream by user
+    public List<IceCream> createIceCreamMenu() {
+        IceCream smallIceCream = new IceCream(1, "small ice cream", 9, 90);
+        IceCream biggIcecream = new IceCream(2, "big small cream", 11, 130);
+        iceCreamMenu.add(smallIceCream);
+        iceCreamMenu.add(biggIcecream);
+        return iceCreamMenu;
+    }
+
+    int clientChoiceIceCream;
+
+    public void showIceCreamMenu(List<IceCream> iceCreamMenu) {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Choice ice cream, please");
+        System.out.println(iceCreamMenu.toString());
+        clientChoiceIceCream = myScanner.nextInt();
+    }
+
+    public void choiceIceCream (int clientChoiceIceCream) {
+        System.out.println("How many ice cream?");
+        Scanner myScanner = new Scanner(System.in);
+        int iceCreamQuantity = myScanner.nextInt();
+
+        for (int i = 0; i < iceCreamQuantity; i++) {
+            orderForAllMenu.add(iceCreamMenu.get(clientChoiceIceCream-1));
+        }
+    }
+
+//drink board and method choice drink by user
+    public List<Drink> createDrinkMenu() {
+        Drink water = new Drink(1, "Water", 5, 0);
+        Drink tee = new Drink(2, "Tee", 7, 30);
+        Drink cola = new Drink(3, "Cola", 15, 80);
+        drinkMenu.add(water);
+        drinkMenu.add(tee);
+        drinkMenu.add(cola);
+        return drinkMenu;
+    }
+
+    int clientChoiceDrink;
+
+    public void showDrinkMenu(List<Drink> drinkMenu) {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Choice drink, please");
+        System.out.println(drinkMenu.toString());
+        clientChoiceDrink = myScanner.nextInt();
+    }
+
+    public void choiceDrink (int clientChoiceDrink) {
+        System.out.println("How many drink?");
+        Scanner myScanner = new Scanner(System.in);
+        int drinkQuantity = myScanner.nextInt();
+
+        for (int i = 0; i < drinkQuantity; i++) {
+            orderForAllMenu.add(drinkMenu.get(clientChoiceDrink-1));
+        }
+    }
+
+//order summary and payment for the order
+    public void showOrder(){
+        for (Dish d :orderForAllMenu) {
+            System.out.println(d);
+        }
+    }
+    int sumOfDish = 0;
+    public int getSumOfDish() {
+        return sumOfDish;
+    }
+    public int orderBill(){
+        System.out.println("You ordered:");
+        System.out.println(orderForAllMenu);
+        for (Dish d : orderForAllMenu) {
+            sumOfDish += d.getPrice();
+        }
+        return sumOfDish;
+    }
+
+    public List<Dish> getOrderForAllMenu() {
+        return orderForAllMenu;
+    }
+
+    public void setOrderForAllMenu(List<Dish> orderForAllMenu) {
+        this.orderForAllMenu = orderForAllMenu;
+    }
+}
