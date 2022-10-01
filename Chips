@@ -1,0 +1,14 @@
+package restaurant;
+
+import java.util.Objects;
+
+public class Chips extends Dish {
+    public Chips(Integer number, String name, Integer price, Integer calories) {
+        super(number, name, price, calories);
+    }
+
+    @Override
+    public String toString() {
+        return "Chips " + getNumber() + ". " + getName() + "  " + getPrice() + " USD" + "  " + getCalories() + " calories \n";
+    }
+}
