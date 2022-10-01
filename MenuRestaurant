@@ -1,0 +1,84 @@
+package restaurant;
+
+import java.util.*;
+
+public class MenuRestaurant {
+    Order o = new Order();
+
+    public static void menuRestaurant() {
+        System.out.println("Choose from the menu");
+        System.out.println("1. Burger");
+        System.out.println("2. Chips");
+        System.out.println("3. Salad");
+        System.out.println("4. Ice Cream");
+        System.out.println("5. Drink");
+        System.out.println("6. I want to pay and finish for to day");
+    }
+
+    public void run() {
+        o.createBurgerMenu();
+        o.createChipsMenu();
+        o.createSaladMenu();
+        o.createIceCreamMenu();
+        o.createDrinkMenu();
+    }
+
+//method that supports the menu selection by the user
+    public void setClientMenuChoice(int clientChoiceBurger, int clientChoiceChips, int clientChoiceSalad, int clientChoiceIceCream, int clientChoiceDrink) {
+        try {
+            Scanner myScanner = new Scanner(System.in);
+            int clientMenuChoice = myScanner.nextInt();
+          if(clientMenuChoice<=7 || clientMenuChoice==0 || clientMenuChoice==-1){
+              System.out.println("Choose from the menu again. Enter a value from 1 to 6");
+              clientMenuChoice = myScanner.nextInt();
+              menuRestaurant();
+          }
+            do {
+                switch (clientMenuChoice) {
+                    case 1:
+                        o.showBurgerMenu(o.burgerMenu);
+                        o.choiceBurger(o.clientChoiceBurger);
+                        menuRestaurant();
+                        setClientMenuChoice(clientChoiceBurger, clientChoiceChips, clientChoiceSalad, clientChoiceIceCream, clientChoiceDrink);
+                        break;
+                    case 2:
+                        o.showChipsMenu(o.chipsMenu);
+                        o.choiceChips(o.clientChoiceChips);
+                        menuRestaurant();
+                        setClientMenuChoice(clientChoiceBurger, clientChoiceChips, clientChoiceSalad, clientChoiceIceCream, clientChoiceDrink);
+                        break;
+                    case 3:
+                        o.showSaladMenu(o.saladMenu);
+                        o.choiceSalad(o.clientChoiceSalad);
+                        menuRestaurant();
+                        setClientMenuChoice(clientChoiceBurger, clientChoiceChips, clientChoiceSalad, clientChoiceIceCream, clientChoiceDrink);
+                        break;
+                    case 4:
+                        o.showIceCreamMenu(o.iceCreamMenu);
+                        o.choiceIceCream(o.clientChoiceIceCream);
+                        menuRestaurant();
+                        setClientMenuChoice(clientChoiceBurger, clientChoiceChips, clientChoiceSalad, clientChoiceIceCream, clientChoiceDrink);
+                        break;
+                    case 5:
+                        o.showDrinkMenu(o.drinkMenu);
+                        o.choiceDrink(o.clientChoiceDrink);
+                        menuRestaurant();
+                        setClientMenuChoice(clientChoiceBurger, clientChoiceChips, clientChoiceSalad, clientChoiceIceCream, clientChoiceDrink);
+                        break;
+                    case 6:
+                        o.orderBill();
+                        System.out.println("The cost of your order " + o.getSumOfDish());
+                        break;
+//                default:
+//                throw new IllegalStateException("Unexpected value: " + clientMenuChoice);
+                }
+            } while (clientMenuChoice == 7);
+        }
+        catch(InputMismatchException | IndexOutOfBoundsException e){
+            System.out.println("Invalid value selected.");
+            System.out.println("Choose from the menu again. Enter a value from 1 to 6");
+            Scanner myScanner = new Scanner(System.in);
+            int clientMenuChoice = myScanner.nextInt();
+        }
+    }
+}
