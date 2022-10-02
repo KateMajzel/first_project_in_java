@@ -1,6 +1,6 @@
 
 
-Program the operation of the Mac restaurant./n
+Program the operation of the Mac restaurant.
 a. There is one class of restaurant that issues orders
 b.Each order is a separate order object that contains plates of dishes,
 included in the order
